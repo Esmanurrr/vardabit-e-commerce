@@ -17,4 +17,17 @@ export async function getProduct(id) {
   return data;
 }
 
-console.log(getProducts());
+export async function getBrands() {
+  const res = await fetch(`${API_URL}`);
+  if (!res.ok) throw Error("Failed getting brands");
+  const data = await res.json();
+  const brands = [...new Set(data.map((product) => product.brand))];
+  return brands;
+}
+export async function getModels() {
+  const res = await fetch(`${API_URL}`);
+  if (!res.ok) throw Error("Failed getting models");
+  const data = await res.json();
+  const models = [...new Set(data.map((product) => product.model))];
+  return models;
+}
