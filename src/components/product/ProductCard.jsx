@@ -1,11 +1,11 @@
 import React from "react";
 
-function ProductCard() {
+function ProductCard({ imgUrl, price, name }) {
   return (
     <div>
-      <div>image</div>
-      <div>price</div>
-      <div>name</div>
+      <div>{imgUrl}</div>
+      <div>{price} $</div>
+      <div>{name}</div>
       <button>add to cart</button>
     </div>
   );
